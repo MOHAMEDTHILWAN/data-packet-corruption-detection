@@ -55,6 +55,7 @@ int main() {
         .crc = 0x5F4A  // Example CRC value
     };
 
+
     // Calculate the CRC checksum
     uint16_t calculatedCRC = calculateCRC((uint8_t*)&packet, sizeof(packet) - sizeof(packet.crc));
 
