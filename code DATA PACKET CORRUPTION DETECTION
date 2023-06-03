@@ -10,7 +10,8 @@ typedef struct data_packet_t {
     uint16_t crc;
 } data_packet_t;
 
-// CRC algorithm implementation (CRC-16)
+// implementation of CRC algorithm 
+
 uint16_t calculateCRC(const uint8_t* data, size_t length) {
     uint16_t crc = 0xFFFF;  // Initialize CRC value to 0xFFFF
 
@@ -32,6 +33,7 @@ uint16_t calculateCRC(const uint8_t* data, size_t length) {
 
 int main() {
     // Sample data packet
+    
     data_packet_t packet = {
         .id = 1,
         .data_length = 6,
@@ -40,9 +42,11 @@ int main() {
     };
 
     // Calculate the CRC checksum
+    
     uint16_t calculatedCRC = calculateCRC((uint8_t*)&packet, sizeof(packet) - sizeof(packet.crc));
 
     // Compare calculated CRC with the packet's CRC
+    
     if (calculatedCRC == packet.crc) {
         printf("Data packet is not corrupted.\n");
     } else {
