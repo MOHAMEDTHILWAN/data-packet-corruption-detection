@@ -36,7 +36,7 @@ uint16_t calculateCRC(const uint8_t* data, size_t length) {
 }
 
 ````````
-The calculateCRC function takes a pointer to the data array and the length of the data as input.
+The calculate CRC function takes a pointer to the data array and the length of the data as input.
 It calculates the CRC checksum using the CRC-16 algorithm.
 The algorithm iterates through each byte of the data array and performs a series of bitwise XOR and shift operations to update the CRC value. 
 The CRC value is initialized to 0xFFFF. For each byte, it is XORed with the current CRC value, and then eight iterations are performed to process each bit of the byte.
